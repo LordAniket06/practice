@@ -1,0 +1,67 @@
+@import "profile";
+
+$primary-color: red;
+$bg-color: #2c3e50;
+$hover-color: #16a085;
+$text-color: #ffffff;
+
+h3{
+  color: $primary-color;
+}
+
+p{
+  color: $primary-color;
+  font-size: 24px;
+}
+
+nav{
+  ul{
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li{
+    display: inline-block;
+  }
+
+  a{
+    display: inline-block;
+    padding: 20px 16px;
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  a:hover{
+    background: $hover-color;
+  }
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.panel{
+  margin: 10px;
+  background-color: cadetblue;
+  border: 2px solid red;
+}
+
+.little-panel{
+  @include border-radius(9px);
+  @extend .panel;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.big-panel{
+  @include border-radius(16px);
+  @extend .panel;
+  padding: 20px;
+  font-size: 30px;
+}
